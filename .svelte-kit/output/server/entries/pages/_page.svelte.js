@@ -11,9 +11,9 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
          L64.54,105.84z"></path></g><g><path d="M312.1,312.1H0V0h312.1V312.1z M4,308.1h304.1V4H4V308.1z"></path></g></g></svg></div>
 
     <div class="hidden md:flex space-x-6 items-center"><a href="#" class="text-selected-text">Home</a>
-      <a href="#about" class="href">About</a>
-      <a href="#portfolio" class="href">Portfolio</a>
-      <a href="#contact" class="href">Contact</a></div>
+      <a href="#" class="href">About</a>
+      <a href="#" class="href">Portfolio</a>
+      <a href="#" class="href">Contact</a></div>
     <div class="md:hidden"><svg width="26" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 8H13.75M5 12H19M10.25 16L19 16" stroke="#464455" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div></nav></header>
 
 <section class="container mt-16 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full"><div class="flex flex-wrap lg:ml-20 md:justify-start max-w-xl mt-0 md:my-36"><h1 class="font-bold text-5xl md:text-6xl lg:text-7xl">Web technologies <br>simplified</h1>

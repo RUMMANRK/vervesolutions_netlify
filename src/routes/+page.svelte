@@ -25,9 +25,9 @@
 
     <div class="hidden md:flex space-x-6 items-center">
       <a href="#" class="text-selected-text">Home</a>
-      <a href="#about" class="href">About</a>
-      <a href="#portfolio" class="href">Portfolio</a>
-      <a href="#contact" class="href">Contact</a>
+      <a href="#" class="href">About</a>
+      <a href="#" class="href">Portfolio</a>
+      <a href="#" class="href">Contact</a>
     </div>
     <div class="md:hidden">
       <svg width="26" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

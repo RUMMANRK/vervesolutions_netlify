@@ -54,6 +54,7 @@ declare module '$env/static/private' {
 	export const __CFBundleIdentifier: string;
 	export const npm_command: string;
 	export const PWD: string;
+	export const VSCODE_NONCE: string;
 	export const npm_lifecycle_event: string;
 	export const EDITOR: string;
 	export const npm_package_name: string;
@@ -138,6 +139,7 @@ declare module '$env/dynamic/private' {
 		__CFBundleIdentifier: string;
 		npm_command: string;
 		PWD: string;
+		VSCODE_NONCE: string;
 		npm_lifecycle_event: string;
 		EDITOR: string;
 		npm_package_name: string;

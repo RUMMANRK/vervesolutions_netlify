@@ -1,6 +1,42 @@
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import { fade, fly, blur, scale } from 'svelte/transition';
+
+
+  let heroActive=false;
+  
+
+  onMount(() => {
+    console.log("Mounted Successfully");
+    heroActive=true;
+
+    // const options = {
+    //   root: null,
+    //   rootMargin: '0px',
+    //   threshold: 0.5
+    // };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          console.log("Intersected Successfully");
+        }
+      });
+    });
+
+    const heroStuff = document.getElementById("heroStuff");
+    if (heroStuff) {
+      observer.observe(heroStuff);
+    }
+    }
+  )
+</script>
+
+
+
 <header class="py-6">
 <nav>
-  <div class="container flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full">
+  <div class="container flex justify-between items-center mx-auto pl-8 lg:px-24 w-full">
     <div class="md:ml-16 logo"><svg height="50" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       viewBox="0 0 312.1 312.1" style="enable-background:new 0 0 312.1 312.1;" xml:space="preserve">
    <g>
@@ -28,7 +64,7 @@
     <a href="#" class="href">Portfolio</a> -->
     <a href="#" class="href">Contact</a>
   </div>
-  <div class="md:hidden">
+  <div class="hidden">
     <svg width="26" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M5 8H13.75M5 12H19M10.25 16L19 16" stroke="#464455" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -36,26 +72,28 @@
 
 </nav>
 </header>
+{#if heroActive}
+<section id="heroStuff" class="container flex justify-between items-center mx-auto p-12 mt-12   h-[80vh]  md:px-14 lg:px-24 w-full md:h-fit" >
 
-<section class="container mt-16 flex justify-between items-center mx-auto px-8 md:px-14 lg:px-24 w-full">
-
-  <div class="flex flex-wrap lg:ml-20 md:justify-start max-w-xl mt-0 md:my-36">
+  <div in:fly={{ y: -250, duration: 1000 }} class="flex flex-wrap lg:ml-20 md:justify-start max-w-xl mt-0 md:mb-36">
         <h1 class="font-bold text-5xl md:text-6xl lg:text-7xl">Web technologies <br>simplified</h1>
         <p class="mt-2">Seamless software solutions customizable for every business need</p>
-        <button class="text-mainff px-8 p-2 mt-4 rounded-lg bg-stone-800 hover:bg-stone-600 hover:transition-colors duration-200">
+        <a href="tel:+8801957443256"><button  class="text-mainff px-8 p-2 mt-4 rounded-lg bg-stone-800 hover:bg-stone-600 hover:transition-colors duration-200">
         Book a free consultation
-      </button>
+      </button></a>
     </div>
     <div>
-      <img src="hero.svg" class="md:h-80" alt="mockup">  
+      <img in:fly={{ y: -250, duration: 1000 }} src="hero.svg" class="md:h-80 md:mb-36" alt="mockup">  
     </div>
+
 </section>
+
 
 
 
    
 <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
+  <div class="container px-5 mx-auto ">
     <div class="text-center mb-20">
       <h2 class="mb-8 lg:mb-16 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900  md:text-4xl">Our Services</h2>
       <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">Verve's experienced product team can ensure a stress-free implementation of bespoke IT solutions</p>
@@ -180,7 +218,7 @@
 </section> -->
 
 
-<footer class="text-gray-600 body-font">
+<footer class="text-gray-600 body-font px-28 pt-28">
   <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
     <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
 
@@ -190,28 +228,21 @@
      
     </p>
     <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-      <a class="text-gray-500">
+      <a class="text-gray-500" href="https://www.facebook.com/profile.php?id=100092784673415">
         <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
           <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
         </svg>
       </a>
-      <a class="ml-3 text-gray-500">
-        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-        </svg>
-      </a>
-      <a class="ml-3 text-gray-500">
-        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-        </svg>
-      </a>
+      <!-- 
+          LinkedIn
       <a class="ml-3 text-gray-500">
         <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
           <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
           <circle cx="4" cy="4" r="2" stroke="none"></circle>
-        </svg>
-      </a>
+        </svg>  </a>-->
+     
     </span>
   </div>
 </footer>
+
+{/if}

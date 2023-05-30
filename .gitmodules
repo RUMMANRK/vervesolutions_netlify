@@ -1,0 +1,3 @@
+[submodule "vervesolutions_netlify"]
+	path = vervesolutions_netlify
+	url = https://github.com/RUMMANRK/vervesolutions_netlify.git
